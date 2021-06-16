@@ -10,6 +10,7 @@ export default function Menu() {
                 <Link to='/section-3'>section 3</Link>
                 <Link to='/section-4'>section 4</Link>
                 <Link to='/section-5'>section 5</Link>
+                <Link to='/section-6'>section 6</Link>
             </nav>
         </div>
     )

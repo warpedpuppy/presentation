@@ -18,7 +18,7 @@ export default function IndexSwim() {
     },
     addToStage () {
       // this.utils.root.grid.changeGridSize()
-      const index = this.utils.root.kingCont.getChildIndex(this.utils.root.clock.cont) + 1
+      // const index = this.utils.root.kingCont.getChildIndex(this.utils.root.clock.cont) + 1
       // this.utils.root.grid.addToStage(index)
 
       if (!this.utils.isMobile) this.ripples.on(true)
