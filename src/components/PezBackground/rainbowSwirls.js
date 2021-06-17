@@ -67,7 +67,7 @@ export default function RainbowSwirls() {
       this.curveQ = this.utils.randomIntBetween(this.curvedQs[0], this.curvedQs[1])
     },
     brick () {
-      const s = Assets.Sprite('tile.png')
+      const s = Assets.Sprite('pez.png')
       s.counter = 0
       s.curveCounter = 0;
 

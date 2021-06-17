@@ -1,0 +1,21 @@
+#section-3-shell {
+    position: relative;
+}
+
+.section-3-text {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px 50px;
+}
+
+.section-3-text h2,
+.section-3-text ul {
+    margin: 0;
+}

@@ -7,6 +7,7 @@ export default class MazeSolver extends Component {
     mazes: [],
     paths: [],
     timeoutObjects: [],
+    disableRunMazeButton: false,
     maze2: [
       [1,0,1,1],
       [1,0,0,1],
@@ -38,21 +39,23 @@ export default class MazeSolver extends Component {
 
  
   componentWillUnmount = () => {
-    this.state.timeoutObjects.forEach( item => {
-      clearTimeout(item)
-    })
+   this.resetMaze();
   }
   runMaze = () => {
+    this.setState({disableRunMazeButton: true})
     let paths = [{path: [[0,1]]}]
     let obj = {};
     obj['a0'] = {path: [[0,1]]};
-    let result = this.findPath(paths, this.state.maze, obj)
-    console.log('result =', result)
+    this.findPath(paths, this.state.maze, obj)
   }
   resetMaze = () => {
-    this.setState({paths: [{path: []}]})
+
+    this.state.timeoutObjects.forEach( item => {
+      clearTimeout(item)
+    })
+    this.setState({timeoutObjects:[], disableRunMazeButton: false, paths: []})
   }
-  counter = 0;
+
   findPath = (paths, maze, obj) => {
     let rows = maze.length - 1;
     let cols = maze[0].length - 1;
@@ -60,16 +63,12 @@ export default class MazeSolver extends Component {
     let pathObjectArray = [];
     obj = obj || {}
 
-    // for (let i = 0; i < paths.length; i++) {
     for (let key in obj) {
       let individualPathHasChanged = false;
-      // let current = paths[i].path;
-     let current = obj[key].path;
-    //  let currentQ = Object.keys(obj).length;
+      let current = obj[key].path;
       let [ prevRow, prevCol ] = current[current.length - 1];
 
       if (obj[key].type === 'failure') {
-
         continue;
       }
       
@@ -154,14 +153,10 @@ export default class MazeSolver extends Component {
    
     
     }
-     console.log(obj)
-    this.counter ++;
-    console.log(this.counter)
-    // if (this.counter > 30)return
-    this.setState({paths: obj})
 
-    
-    return anyPathHasChanged ? this.setState({timeoutObjects: [...this.state.timeoutObjects, setTimeout(() => this.findPath(pathObjectArray, maze, obj), 80)]}) : console.log('no options') ;
+
+    this.setState({paths: obj})
+    return anyPathHasChanged ? this.setState({timeoutObjects: [...this.state.timeoutObjects, setTimeout(() => this.findPath(pathObjectArray, maze, obj), 80)]}) :  this.setState({disableRunMazeButton: false}) ;
 
 }
 
@@ -196,7 +191,7 @@ export default class MazeSolver extends Component {
             } 
         </div>
         <div className="maze-button-div">
-      <button className="maze-button" onClick={this.runMaze}>run maze</button>
+      <button className="maze-button" disabled={this.state.disableRunMazeButton} onClick={this.runMaze}>run maze</button>
       <button  className="maze-button" onClick={this.resetMaze}>reset maze</button>     
       </div>
         <section id="maze-solver">

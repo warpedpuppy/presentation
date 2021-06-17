@@ -1,14 +1,17 @@
 import React from 'react'
 import FishBackground from '../components/FishBackground/FishBackground';
+import './Section.css';
 export default function Section5() {
     return (
-        <div>
+        <div className="section-shell">
              <FishBackground />
+             <div className="section-long-text">
             <h2>practices that took me too long to incorporate</h2>
             <ul>
                 <li>If you have a huge script and a piece of it doesn’t work</li>
                 <li>Always be thinking mutation (arrays, ++)</li>
                 <li>Reverse engineering (bootstrap, jquery)</li>
+                <li>When an artist gives you a wireframe --- it isn’t a suggestion, it is law</li>
                 <li>If you are completely stuck:
                     <ul>
                         <li>bring it back to a moment where it worked and build it back piece by piece. </li>
@@ -38,6 +41,7 @@ Test, test, test on the dummy repo
                 </li>
                 <li>Never forget the fun (SPECIAL ANIMATION HERE) </li>
             </ul>
+            </div>
         </div>
     )
 }
