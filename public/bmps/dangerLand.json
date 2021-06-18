@@ -1,0 +1,39 @@
+{"frames": {
+
+"runner1.png":
+{
+	"frame": {"x":0,"y":0,"w":192,"h":177},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":177},
+	"sourceSize": {"w":192,"h":177}
+},
+"runner2.png":
+{
+	"frame": {"x":192,"y":0,"w":128,"h":192},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":192},
+	"sourceSize": {"w":128,"h":192}
+},
+"runner3.png":
+{
+	"frame": {"x":320,"y":0,"w":168,"h":176},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":176},
+	"sourceSize": {"w":168,"h":176}
+}},
+"animations": {
+	"runner": ["runner1.png","runner2.png","runner3.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "dangerLand.png",
+	"format": "RGBA8888",
+	"size": {"w":488,"h":192},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d1fa9d01ee0aa24645cb710c513d753f:2141774132ac96f935a50d642718a53b:0c47b951048e17bbc89092d7edf68bf2$"
+}
+}

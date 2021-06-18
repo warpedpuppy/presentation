@@ -27,7 +27,7 @@ const PezAnimation = {
           this.tileColumn.addToStage()
           this.rainbowSwirlInstances.push(this.tileColumn)
         }
-
+        
         // Listen for animate update
         app.ticker.add(this.ticker.bind(this));
     },
@@ -42,6 +42,7 @@ const PezAnimation = {
         for (let i = 0; i < this.rainbowSwirlsQ; i++) {
         this.rainbowSwirlInstances[i].removeFromStage()
         }
+      
     },
     ticker: function (delta) {
         for (let i = 0; i < this.rainbowSwirlsQ; i++) {

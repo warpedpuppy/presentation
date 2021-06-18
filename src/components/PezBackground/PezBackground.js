@@ -3,13 +3,6 @@ import PezAnimation from './pezAnimation';
 import Utils from './utils';
 export default class PezBackground extends Component {
 
-
-  state = {
-    mongo: false,
-    postresql: false,
-    aws: false
-  }
-//   static contextType = AppContext;
   componentDidMount = async () => {
     setTimeout(this.createSwirls, 100)
     window.addEventListener('resize', this.resizeHandler);

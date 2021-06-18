@@ -1,5 +1,6 @@
 import React from 'react'
 import './Section.css';
+import DangerLand from '../components/dangerLand/DangerLand';
 export default function Section4() {
     return (
         <div className="section-shell">
@@ -11,6 +12,7 @@ export default function Section4() {
                     <li>scamming you, scamming others using you, hustlers</li>
                 </ul>
             </div>
+            <DangerLand />
         </div>
     )
 }
