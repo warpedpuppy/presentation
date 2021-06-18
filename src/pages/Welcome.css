@@ -33,6 +33,11 @@
     margin: 10px 20px;
 }
 
+#welcome .welcome-text p cite {
+    text-align: right;
+    display: block;
+}
+
 #welcome div:nth-child(1) {
     position: fixed;
     top: 0;
