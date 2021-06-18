@@ -29,16 +29,16 @@
     border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-#welcome .welcome-text p {
+#welcome .welcome-text div {
     margin: 10px 20px;
 }
 
-#welcome .welcome-text p cite {
+#welcome .welcome-text cite {
     text-align: right;
     display: block;
 }
 
-#welcome div:nth-child(1) {
+#welcome div.lines {
     position: fixed;
     top: 0;
     left: 10px;
@@ -46,7 +46,7 @@
     height: 100vh;
 }
 
-#welcome div:nth-child(1) span {
+#welcome div.lines span {
     display: inline-block;
     width: 15px;
     height: 100vh;
@@ -58,67 +58,67 @@
     animation-iteration-count: infinite;
 }
 
-#welcome div:nth-child(1) span:nth-child(1) {
+#welcome div.lines span.lines {
     background-color: #446996;
     animation-delay: 0.1s;
 }
 
-#welcome div:nth-child(1) span:nth-child(2) {
+#welcome div.lines span:nth-child(2) {
     background-color: #2d4264;
     animation-delay: 0.2s;
 }
 
-#welcome div:nth-child(1) span:nth-child(3) {
+#welcome div.lines span:nth-child(3) {
     background-color: #182033;
     animation-delay: 0.3s;
 }
 
-#welcome div:nth-child(1) span:nth-child(4) {
+#welcome div.lines span:nth-child(4) {
     background-color: #1b2826;
     animation-delay: 0.4s;
 }
 
-#welcome div:nth-child(1) span:nth-child(5) {
+#welcome div.lines span:nth-child(5) {
     background-color: #1f3423;
     animation-delay: 0.5s;
 }
 
-#welcome div:nth-child(1) span:nth-child(6) {
+#welcome div.lines span:nth-child(6) {
     background-color: #2b482a;
     animation-delay: 0.6s;
 }
 
-#welcome div:nth-child(1) span:nth-child(7) {
+#welcome div.lines span:nth-child(7) {
     background-color: #364a2b;
     animation-delay: 0.7s;
 }
 
-#welcome div:nth-child(1) span:nth-child(8) {
+#welcome div.lines span:nth-child(8) {
     background-color: #262a16;
     animation-delay: 0.8s;
 }
 
-#welcome div:nth-child(1) span:nth-child(9) {
+#welcome div.lines span:nth-child(9) {
     background-color: #3a4016;
     animation-delay: 0.9s;
 }
 
-#welcome div:nth-child(1) span:nth-child(10) {
+#welcome div.lines span:nth-child(10) {
     background-color: #888136;
     animation-delay: 1s;
 }
 
-#welcome div:nth-child(1) span:nth-child(10) {
+#welcome div.lines span:nth-child(10) {
     background-color: #635021;
     animation-delay: 1.1s;
 }
 
-#welcome div:nth-child(1) span:nth-child(11) {
+#welcome div.lines span:nth-child(11) {
     background-color: #533217;
     animation-delay: 1.2s;
 }
 
-#welcome div:nth-child(1) span:nth-child(12) {
+#welcome div.lines span:nth-child(12) {
     background-color: #5c2a1d;
     animation-delay: 1.3s;
 }
@@ -136,10 +136,10 @@
     #welcome .welcome-text p {
         margin: 10px 20px 0 200px;
     }
-    #welcome div:nth-child(1) {
+    #welcome div.lines {
         left: 100px;
     }
-    #welcome div:nth-child(1) span {
+    #welcome div.lines span {
         width: 30px;
     }
 }
