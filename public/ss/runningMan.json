@@ -1,8 +1,24 @@
 {"frames": {
 
+"aligator1.png":
+{
+	"frame": {"x":289,"y":433,"w":234,"h":63},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":70,"w":234,"h":63},
+	"sourceSize": {"w":236,"h":135}
+},
+"aligator2.png":
+{
+	"frame": {"x":289,"y":299,"w":233,"h":132},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":1,"w":233,"h":132},
+	"sourceSize": {"w":236,"h":135}
+},
 "man1.png":
 {
-	"frame": {"x":289,"y":156,"w":151,"h":296},
+	"frame": {"x":156,"y":1,"w":151,"h":296},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":75,"y":2,"w":151,"h":296},
@@ -10,7 +26,7 @@
 },
 "man2.png":
 {
-	"frame": {"x":1,"y":282,"w":169,"h":286},
+	"frame": {"x":1,"y":299,"w":169,"h":286},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":38,"y":3,"w":169,"h":286},
@@ -18,21 +34,22 @@
 },
 "man3.png":
 {
-	"frame": {"x":229,"y":1,"w":153,"h":296},
-	"rotated": true,
+	"frame": {"x":1,"y":1,"w":153,"h":296},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":45,"y":3,"w":153,"h":296},
 	"sourceSize": {"w":255,"h":299}
 },
 "man4.png":
 {
-	"frame": {"x":1,"y":1,"w":226,"h":279},
+	"frame": {"x":309,"y":1,"w":226,"h":279},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":11,"y":7,"w":226,"h":279},
 	"sourceSize": {"w":255,"h":299}
 }},
 "animations": {
+	"aligator": ["aligator1.png","aligator2.png"],
 	"man": ["man1.png","man2.png","man3.png","man4.png"]
 },
 "meta": {
@@ -40,8 +57,8 @@
 	"version": "1.0",
 	"image": "runningMan.png",
 	"format": "RGBA8888",
-	"size": {"w":526,"h":453},
+	"size": {"w":536,"h":497},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:352cc9ba5753bc89aea3fdb9ea6efe0d:d33f978dbc59478f39a9557ce87a0100:4040e325e99f15ea07f0dab38c32cabc$"
+	"smartupdate": "$TexturePacker:SmartUpdate:e68101c04ac3c5cd5c4890256c636eb1:b26fe4a1da47596c4fad1830ce751a12:4040e325e99f15ea07f0dab38c32cabc$"
 }
 }

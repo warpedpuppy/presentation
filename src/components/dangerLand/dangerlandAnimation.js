@@ -26,9 +26,17 @@ const DangerLand = {
             this.onRunnerLoaded.bind(this)
           }
 
-      
+          const aligatorTextures = [];
+          for (let i = 0; i < 2; i++) {
+              const texture = PIXI.Texture.from(`aligator${i + 1}.png`);
+              aligatorTextures.push(texture);
+          }
+        //   const aligator = new PIXI.AnimatedSprite(aligatorTextures);
+        //   aligator.animationSpeed = 0.05;
+        //   aligator.scale.set(0.5)
+        //   aligator.play();
+        //   this.app.stage.addChild(aligator)
 
-     
         app.ticker.add(this.ticker.bind(this));
     },
     onRunnerLoaded: function () {

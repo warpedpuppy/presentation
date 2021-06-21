@@ -156,7 +156,7 @@ export default class MazeSolver extends Component {
 
 
     this.setState({paths: obj})
-    return anyPathHasChanged ? this.setState({timeoutObjects: [...this.state.timeoutObjects, setTimeout(() => this.findPath(pathObjectArray, maze, obj), 80)]}) :  this.setState({disableRunMazeButton: false}) ;
+    return anyPathHasChanged ? this.setState({timeoutObjects: [...this.state.timeoutObjects, setTimeout(() => this.findPath(pathObjectArray, maze, obj), 40)]}) :  this.setState({disableRunMazeButton: false}) ;
 
 }
 

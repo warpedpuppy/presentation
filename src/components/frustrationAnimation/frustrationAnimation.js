@@ -10,12 +10,12 @@ const DangerLand = {
 
         Utils.setWidthAndHeight(w, h);
         const app = new PIXI.Application({
-        width: w, height: h,  backgroundAlpha:0, resolution: window.devicePixelRatio || 1,
+        width: w, height: h,  backgroundAlpha:0, resolution: window.devicePixelRatio || 1, autoResize:true
         });
         document.getElementById("frustration").appendChild(app.view);
         
         const container = new PIXI.Container();
-
+        console.log(window.devicePixelRatio)
         app.stage.addChild(container);
 
         this.app = app;
@@ -24,9 +24,7 @@ const DangerLand = {
         let particleContainer = this.particleContainer = new PIXI.ParticleContainer();
         particleContainer.pivot.set(0.5)
         let index = 0;
-        for (let i = 0; i < arr.length; ++i)
-        {
-            
+        for (let i = 0; i < arr.length; ++i) {
             let sprite = PIXI.Sprite.from("/bmps/dot.png");
             sprite.x = sprite.storeX = arr[i].x;
             sprite.y = sprite.storeY = arr[i].y;
@@ -42,10 +40,11 @@ const DangerLand = {
         }
 
         app.stage.addChild(particleContainer);
-        particleContainer.x = Utils.canvasWidth / 2;
-        particleContainer.y = Utils.canvasHeight / 2;
+        particleContainer.x = (Utils.canvasWidth / 2) / window.devicePixelRatio;
+        particleContainer.y = (Utils.canvasHeight / 2) / window.devicePixelRatio;
+        this.particleContainer = particleContainer;
 
-      
+        console.log(Utils.canvasWidth, Utils.canvasHeight)
 
      
         app.ticker.add(this.ticker.bind(this));
@@ -54,8 +53,9 @@ const DangerLand = {
     resize: function (w, h) {
        
         Utils.setWidthAndHeight(w, h);
-        this.runner.x = Utils.canvasWidth / 2;
-        this.app.renderer.resize(w, this.canvasHeight)
+        this.app.renderer.resize(w, h)
+        this.particleContainer.x = (Utils.canvasWidth / 2) / window.devicePixelRatio;
+        this.particleContainer.y = (Utils.canvasHeight / 2) / window.devicePixelRatio;
     },
     stop: function () {
 

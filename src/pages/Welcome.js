@@ -20,15 +20,13 @@ export default function Welcome() {
             </div>
             <div className="welcome-header">
                 <h1>welcome!</h1>
-                <h2>to ted talking</h2>
+             
             </div>
             <div className="welcome-text">
-                <div>
                     <blockquote>Aren&apos;t you worried all those graphics will distract from the content?</blockquote>
                     <cite>my mother, concerned</cite>
                     <blockquote>The graphics, and how they were built, are a second tier of content!</blockquote>
                     <cite>me, justifiying</cite>
-                </div>
             </div>
         </div>
     )

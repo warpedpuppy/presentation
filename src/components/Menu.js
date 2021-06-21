@@ -4,13 +4,13 @@ export default function Menu() {
     return (
         <div>
             <nav>
-                <Link to='/'>home</Link>
-                <Link to='/section-1'>section 1</Link>
-                <Link to='/section-2'>section 2</Link>
-                <Link to='/section-3'>section 3</Link>
-                <Link to='/section-4'>section 4</Link>
-                <Link to='/section-5'>section 5</Link>
-                <Link to='/section-6'>section 6</Link>
+                <Link to='/'>welcome</Link> |
+                <Link to='/section-1'>1</Link> |
+                <Link to='/section-2'>2</Link> |
+                <Link to='/section-3'>3</Link> |
+                <Link to='/section-4'>4</Link> |
+                <Link to='/section-5'>5</Link> |
+                <Link to='/section-6'>6</Link> 
             </nav>
         </div>
     )

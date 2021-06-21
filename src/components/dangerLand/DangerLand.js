@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DangerLandAnimation from './dangerlandAnimation';
 import Utils from './utils';
+
 export default class DangerLand extends Component {
 
 componentDidMount = () => {
@@ -18,7 +19,9 @@ resizeHandler = () => {
 }
   render() {
     return (
+      <>
       <div id="danger-land"></div>
+      </>
     );
   }
 }

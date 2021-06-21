@@ -4,13 +4,30 @@
 
 .section-short-text {
     position: absolute;
-    top: 50px;
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 100%;
+    top: 200px;
+    /* background-color: #333333; */
+    width: 100vw;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 50px;
+}
+
+.section-short-text.center {
+    align-items: center;
+}
+
+.section-bottom {
+    bottom: 50px;
     align-items: flex-end;
-    padding: 20px 50px;
+    top: auto;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(260deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 96, 1) 0%, rgba(9, 9, 121, 0) 74%);
+}
+
+.section-top-left {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 96, 1) 0%, rgba(9, 9, 121, 0) 100%);
 }
 
 .section-short-text h2,
@@ -20,7 +37,18 @@
 
 .section-short-text h2 {
     position: relative;
-    right: 200px;
+}
+
+.section-top-right {
+    position: relative;
+    top: 0;
+    padding: 20px 50px 20px;
+}
+
+.section-top-left {
+    position: relative;
+    top: 0;
+    align-items: flex-start;
 }
 
 .section-long-text {
@@ -43,6 +71,40 @@
     animation: 0.25s linear wiggle;
     display: inline-block;
     animation-iteration-count: infinite;
+}
+
+.section-left {
+    position: relative;
+    top: 0;
+    display: block;
+}
+
+.section-left h2 {
+    right: 0;
+}
+
+.section-left h2 {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .section-short-text {
+        align-items: flex-end;
+    }
+    .section-top-right {
+        position: relative;
+        top: 0;
+        padding: 20px 50px 20px;
+    }
+    .section-top-right h2 {
+        position: relative;
+        left: -50px;
+    }
+    .section-top-left {
+        position: relative;
+        top: 0;
+        align-items: flex-start;
+    }
 }
 
 @keyframes wiggle {
