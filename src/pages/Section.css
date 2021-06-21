@@ -23,6 +23,10 @@
     align-items: center;
 }
 
+.section-short-text.center h2 {
+    /* text-align: left; */
+}
+
 .section-bottom {
     bottom: 50px;
     align-items: flex-end;

@@ -10,6 +10,7 @@ export default function Section5() {
             <ul>
                 <li>when working in a huge application. . . . </li>
                 <li>Keep your eye on mutations. . . . </li>
+                <li>Keep your eye on "this". . . . </li>
                 <li>Reverse engineering is fair game!</li>
                 <li>Honor your artists!</li>
                 <li>When completely stuck. . . . 

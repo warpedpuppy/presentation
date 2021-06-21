@@ -2,7 +2,8 @@ import React from 'react'
 
 export default function Section4() {
     return (
-        <div>
+        <div className="section-shell">
+        <div className="section-short-text center">
             <h2>Bonus</h2>
             <ul>
                 <li>
@@ -28,6 +29,7 @@ export default function Section4() {
                     </ul>
                 </li>
             </ul>
+            </div>
         </div>
     )
 }
