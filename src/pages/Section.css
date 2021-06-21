@@ -14,6 +14,12 @@
 }
 
 .section-short-text.center {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
     align-items: center;
 }
 
@@ -28,6 +34,19 @@
 .section-top-left {
     background: rgb(2, 0, 36);
     background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 96, 1) 0%, rgba(9, 9, 121, 0) 100%);
+}
+
+.section-top-left.absolute {
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section-top-left.absolute ul li {
+    font-size: 1.05rem;
+    display: block;
+    margin: 5px auto;
 }
 
 .section-short-text h2,

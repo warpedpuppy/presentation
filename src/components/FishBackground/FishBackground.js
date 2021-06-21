@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SwimAnimation from './supportingClasses/swimAnimation';
-
+import './FishBackground.css'
 export default class FishBackground extends Component {
 
   componentDidMount = () => {

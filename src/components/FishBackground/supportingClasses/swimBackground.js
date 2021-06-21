@@ -36,12 +36,12 @@ export default function SwimBackground() {
       this.cont2.height = this.wh.canvasHeight * this.sizeIncrement
       this.cont2.x = -this.wh.canvasWidth / this.sizeIncrement
       this.cont2.y = -this.wh.canvasHeight / this.sizeIncrement
-      this.cont2.alpha = 0.5
+      this.cont2.alpha = 0.25
       this.cont2.vx = this.speed2
       this.cont2.vy = this.speed2
 
       this.background = Assets.Graphics()
-      this.background.beginFill(0x3399ff).drawRect(0, 0, this.utils.canvasWidth, this.utils.canvasHeight).endFill()
+      this.background.beginFill(0x000821).drawRect(0, 0, this.utils.canvasWidth, this.utils.canvasHeight).endFill()
     },
     resize () {
       this.cont.width = this.utils.canvasWidth * this.sizeIncrement
@@ -53,7 +53,7 @@ export default function SwimBackground() {
       this.cont2.y = -this.utils.canvasHeight / this.sizeIncrement
 
       this.background.clear()
-      this.background.beginFill(0x3399ff).drawRect(0, 0, this.utils.canvasWidth, this.utils.canvasHeight).endFill()
+      this.background.beginFill(0x000821).drawRect(0, 0, this.utils.canvasWidth, this.utils.canvasHeight).endFill()
     },
     addToStage () {
       this.fishSchool.addToStage()

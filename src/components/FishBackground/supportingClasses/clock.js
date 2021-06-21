@@ -14,6 +14,7 @@ export default function Clock() {
     init () {
       this.parentCont = this.utils.root.kingCont
       const hourhand = this.hourhand = Assets.Sprite('/hourhand.png')
+      
       hourhand.anchor.set(0.5)
       // hourhand.tint = 0xFF0000;
       this.cont.addChild(hourhand)
@@ -43,7 +44,7 @@ export default function Clock() {
       this.demoM = 0
       this.demoS = 0
 
-      this.cont.alpha = 0.25
+      this.cont.alpha = 0.05
       this.cont.scale.set(0.5)
       this.cont.x = this.utils.canvasWidth / 2
       this.cont.y = this.utils.canvasHeight / 2
@@ -55,7 +56,8 @@ export default function Clock() {
       return this
     },
     addToStage () {
-      this.parentCont.addChild(this.cont)
+     
+      this.parentCont.addChildAt(this.cont, 0)
     },
     removeFromStage () {
       this.parentCont.removeChild(this.cont)

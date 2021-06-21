@@ -64,7 +64,7 @@ export default function SwimAnimations() {
       this.stage = app.stage
       this.stage.addChild(this.kingCont)
 
-    
+    this.kingCont.alpha = 0;
 
 
       this.kingCont.addChild(this.filterContainer)
@@ -119,7 +119,7 @@ export default function SwimAnimations() {
       Assets.init()
 
       this.gears.init().addToStage()
-
+    
       this.clock.init().addToStage()
 
 
@@ -146,6 +146,7 @@ export default function SwimAnimations() {
       this.startGame()
     },
     startGame () {
+      Tweens.tween(this.kingCont, 1, { alpha: [0, 0.5] })
       if (!this.isMobile) {
         this.app.ticker.add(this.animateDesktopIpad)
         // this.keyHandler.addToStage()

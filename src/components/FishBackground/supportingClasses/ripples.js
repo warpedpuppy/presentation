@@ -24,6 +24,7 @@ export default function Ripples() {
 
       for (let i = 0; i < this.totalSprites; i++) {
         const ring = Assets.Sprite('gradientRing.png')
+
         ring.anchor.x = ring.anchor.y = 0.5
         ring.startScale = 0.1
         ring.scale.set(ring.startScale)
@@ -48,7 +49,7 @@ export default function Ripples() {
       this.opc = 0
 
       this.gradient = Assets.Sprite('gradient.png')
-      this.gradient.alpha = 0.5
+      this.gradient.alpha = 0.25
       this.gradient.anchor.set(0.5)
     },
     on (boolean) {
