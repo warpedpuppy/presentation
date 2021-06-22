@@ -41,27 +41,26 @@ export default function RainbowSwirls() {
       this.curve = this.curves[Math.floor(Math.random() * 4)]
       this.app = this.utils.app;
       
-      this.interval = this.utils.randomIntBetween(0, 2)
+      this.interval = this.utils.randomIntBetween(1,3);
       this.parentCont = parentCont
 
       this.tileQ =  150 ;
       this.cont = Assets.ParticleContainer(this.tileQ)
 
       for (let i = 0; i < this.tileQ; i++) {
-        const s = this.brick()
-     
-        s.alpha = 0.5
-        s.tint = this.colors[this.colorCounter]
-        this.colorCounter++
-        if (this.colorCounter > this.colors.length - 1) this.colorCounter = 0
+        const s = this.brick();
+        s.alpha = 0.25;
+        s.tint = this.colors[this.colorCounter];
+        this.colorCounter++;
+        if (this.colorCounter > this.colors.length - 1) this.colorCounter = 0;
         this.objectPool.push(s)
       }
 
       const s = this.objectPool[this.objectPoolCounter];
       this.objectPoolCounter++;
       const newPos = this.newXY();
-      s.y = newPos.x;
-      s.x = newPos.y;
+      s.x = newPos.x;
+      s.y = newPos.y;
       this.cont.addChild(s);
 
       this.curveQ = this.utils.randomIntBetween(this.curvedQs[0], this.curvedQs[1])
@@ -70,9 +69,7 @@ export default function RainbowSwirls() {
       const s = Assets.Sprite('pez.png')
       s.counter = 0
       s.curveCounter = 0;
-
       this.brickHeight = s.height
-     
       s.anchor.x = 0.5
       s.anchor.y = 1
       return s
@@ -88,7 +85,7 @@ export default function RainbowSwirls() {
         this.objectPoolCounter = 0
       }
 
-      this.curveCounter++
+      this.curveCounter++;
       this.curve *= 1.05
       const deg = this.utils.deg2rad(this.curve)
       s.rotation = deg
@@ -127,25 +124,35 @@ export default function RainbowSwirls() {
     newXY () {
       const buffer = 0
       const perc = 0.5
+      console.log(this.quadrant)
+
       if (this.quadrant === 'TL') {
+        //this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
+        //this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
         return {
-          x: this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
-          y: this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
+          x: this.utils.canvasWidth * 0.25,
+          y:  this.utils.canvasHeight * 0.25
         }
       } if (this.quadrant === 'TR') {
+        // x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
+        //   y: this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
         return {
-          x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
-          y: this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
+          x: this.utils.canvasWidth * 0.75,
+          y:  this.utils.canvasHeight * 0.25
         }
       } if (this.quadrant === 'BL') {
+        // x: this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
+          // y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
         return {
-          x: this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
-          y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
+          x: this.utils.canvasWidth * 0.75,
+          y:  this.utils.canvasHeight * 0.75
         }
       } if (this.quadrant === 'BR') {
+         // x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
+          // y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
         return {
-          x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
-          y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
+          x: this.utils.canvasWidth * 0.25,
+          y:  this.utils.canvasHeight * 0.75
         }
       }
     },
@@ -159,9 +166,9 @@ export default function RainbowSwirls() {
 
     },
     animate () {
-
       this.testCounter++;
-      if (this.testCounter % this.interval === 0) this.newBrick()
+
+      if (this.testCounter % this.interval === 0) {this.newBrick(); this.testCounter = 0;}
     }
   }
 }

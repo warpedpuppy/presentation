@@ -3,6 +3,14 @@ import Utils from './utils';
 
 const DangerLand = {
     canvasHeight: 400,
+    gravity: 1,
+    density: 1.22,
+    drag: 0.47,
+    balls: [],
+    ballsOnStage: [],
+    ballQ: 20,
+    counter: 0,
+    ballInterval: 50,
     init: function (w, h) {
 
 
@@ -31,13 +39,15 @@ const DangerLand = {
               const texture = PIXI.Texture.from(`aligator${i + 1}.png`);
               aligatorTextures.push(texture);
           }
-        //   const aligator = new PIXI.AnimatedSprite(aligatorTextures);
-        //   aligator.animationSpeed = 0.05;
-        //   aligator.scale.set(0.5)
-        //   aligator.play();
-        //   this.app.stage.addChild(aligator)
-
-        app.ticker.add(this.ticker.bind(this));
+          
+          for (let i = 0; i < this.ballQ; i++) {
+              let ball = PIXI.Sprite.from('/bmps/dot.png');
+              ball.vx = Utils.randomNumberBetween(2, 10)
+              this.balls.push(ball);
+          }
+          
+       
+       
     },
     onRunnerLoaded: function () {
         const runningTextures = [];
@@ -49,11 +59,20 @@ const DangerLand = {
         runner.animationSpeed = 0.15;
         runner.scale.set(0.5)
         runner.play();
+        runner.vy = 0;
+        runner.isJumping = false;
         runner.x = Utils.canvasWidth / 2;
-        runner.y = this.canvasHeight - runner.height;
+        runner.y = runner.startY = this.canvasHeight - runner.height;
         this.runner = runner;
         this.app.stage.addChild(runner)
-
+        this.app.ticker.add(this.ticker.bind(this));
+        window.addEventListener('keypress', this.jump.bind(this))
+    },
+    jump: function (e) {
+        if (e.keyCode === 32) {
+            this.runner.isJumping = true;
+            this.runner.vy = 20;
+        }
     },
     resize: function (w, h) {
        
@@ -67,7 +86,37 @@ const DangerLand = {
         
     },
     ticker: function (delta) {
-       
+        if (this.runner.isJumping) {
+            this.runner.vy -= this.gravity;
+            this.runner.y -= this.runner.vy;
+            if (this.runner.y >= this.runner.startY) {
+                this.runner.isJumping = false;
+                this.runner.y = this.runner.startY;
+            }
+        }
+        this.counter ++;
+        // console.log(this.counter % this.ballInterval);
+        if (this.counter % this.ballInterval === 0 && this.balls.length > 0) {
+            //this.ballInterval = Utils.randomNumberBetween(1, 3);
+            console.log("here")
+            let b = this.balls.pop()
+            b.y = Utils.randomNumberBetween(400 - this.runner.height, 400);
+            b.x = Utils.canvasWidth;
+
+            this.app.stage.addChild(b)
+
+            this.ballsOnStage.push(b)
+        }
+        //don't do this in production
+        for (let i = 0; i < this.ballsOnStage.length; i++) {
+            let b = this.ballsOnStage[i];
+            b.x -= b.vx;
+
+            if (b.x < 0) {
+                b.x = Utils.canvasWidth;
+            }
+        }
+   
     }
     
 }

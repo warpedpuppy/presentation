@@ -181,6 +181,22 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">../../../Desktop/aligator1.png</key>
+            <key type="filename">../../../Desktop/aligator2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0,0</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>59,34,118,67</rect>
+                <key>scale9Paddings</key>
+                <rect>59,34,118,67</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../public/bmps/man1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -248,6 +264,8 @@
             <filename>../public/bmps/man2.png</filename>
             <filename>../public/bmps/man3.png</filename>
             <filename>../public/bmps/man4.png</filename>
+            <filename>../../../Desktop/aligator1.png</filename>
+            <filename>../../../Desktop/aligator2.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
