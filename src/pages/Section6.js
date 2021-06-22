@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Breathing from '../components/breathing/Breathing';
 export default function Section4() {
     return (
+
         <div className="section-shell">
+        <Breathing />
         <div className="section-short-text center">
             <h2>Bonus</h2>
             <ul>

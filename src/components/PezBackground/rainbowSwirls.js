@@ -122,8 +122,8 @@ export default function RainbowSwirls() {
       this.cont.addChild(s)
     },
     newXY () {
-      const buffer = 0
-      const perc = 0.5
+      // const buffer = 0
+      // const perc = 0.5
       console.log(this.quadrant)
 
       if (this.quadrant === 'TL') {

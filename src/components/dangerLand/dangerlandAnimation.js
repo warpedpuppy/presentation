@@ -69,7 +69,7 @@ const DangerLand = {
         window.addEventListener('keypress', this.jump.bind(this))
     },
     jump: function (e) {
-        if (e.keyCode === 32) {
+        if (e.keyCode === 32 && !this.runner.isJumping) {
             this.runner.isJumping = true;
             this.runner.vy = 20;
         }
@@ -100,7 +100,7 @@ const DangerLand = {
             //this.ballInterval = Utils.randomNumberBetween(1, 3);
             console.log("here")
             let b = this.balls.pop()
-            b.y = Utils.randomNumberBetween(400 - this.runner.height, 400);
+            b.y = Utils.randomNumberBetween(400 - this.runner.height, 300);
             b.x = Utils.canvasWidth;
 
             this.app.stage.addChild(b)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BreathingAnimation from '././breathingAnimation';
-import Utils from '../utils/utils';
+import Utils from '../utils/utils'
 export default class Breathing extends Component {
 
 componentDidMount = () => {
