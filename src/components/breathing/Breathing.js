@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import BreathingAnimation from '././breathingAnimation';
+// import BreathingAnimation from '././breathingAnimation';
+import Fireworks from './Fireworks'
 import Utils from '../utils/utils'
 export default class Breathing extends Component {
 
 componentDidMount = () => {
     Utils.getWidthAndHeight()
-    BreathingAnimation.init(Utils.canvasWidth, Utils.canvasHeight);
+    // BreathingAnimation.init(Utils.canvasWidth, Utils.canvasHeight);
+    Fireworks.init(Utils.canvasWidth, Utils.canvasHeight);
     window.addEventListener('resize', this.resizeHandler);
 }
 componentWillUnmount = () => {
-    BreathingAnimation.stop();
+    Fireworks.stop();
     window.removeEventListener('resize', this.resizeHandler);
 }
 resizeHandler = () => {
   Utils.getWidthAndHeight()
-  BreathingAnimation.resize(Utils.canvasWidth, Utils.canvasHeight);
+  Fireworks.resize(Utils.canvasWidth, Utils.canvasHeight);
 }
   render() {
     return (
