@@ -39,7 +39,8 @@ const Tweens = {
     this.returnHome.spaceShipReturnHome(background, maze, ship, onCompleteHandler)
   },
   tween (item, seconds, changePropertiesObject, onComplete, easing) {
-    if (!item || item.isTweening) return
+
+   if (!item || item.isTweening) return
 
     item.id = this.utils.randomIntBetween(10, 20)
 
@@ -63,6 +64,7 @@ const Tweens = {
     // console.log(this.tweenArray.length)
     if (this.tweenArray.length) {
       this.tweenArray.forEach((item, index) => {
+
         if (!item.obj) {
           item.isTweening = false
           if (item && item.onComplete) {
