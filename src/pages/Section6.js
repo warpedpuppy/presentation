@@ -6,7 +6,7 @@ export default function Section4() {
         <div className="section-shell">
         <Breathing />
         <div className="section-short-text center">
-            {/* <h2>Bonus</h2>
+            <h2>Bonus</h2>
             <ul>
                 <li>
                     Toughest interview questions;
@@ -30,7 +30,7 @@ export default function Section4() {
                         <li>Hash maps</li>
                     </ul>
                 </li>
-            </ul> */}
+            </ul>
             </div>
         </div>
     )

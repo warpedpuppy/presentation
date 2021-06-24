@@ -8,7 +8,7 @@ import PixiFps from "pixi-fps";
 const Firework  = {
         utils: Utils,
         fs: [],
-        fq: 300,
+        fq: 500,
         starQ: 300,
         range: 100,
         colors: [ 0xff7575, 0xffb775, 0xfff175, 0xc3ff76, 0x7bffb8, 0x7de8ff, 0x799fff, 0xff93f7],
@@ -26,9 +26,8 @@ const Firework  = {
             });
             document.getElementById("breathing").appendChild(app.view);
 
-            this.particleContainer = new PIXI.ParticleContainer();
-            app.stage.addChild(this.particleContainer);
-           app.ticker.add(this.ticker.bind(this));
+           
+         
            this.app = app;
            this.stage = app.stage;
            const fpsCounter = new PixiFps();
@@ -38,8 +37,9 @@ const Firework  = {
         },
         build: function () {
             
-            
-            let i, firework, delay;
+            console.log("build")
+            let i, firework;
+            this.fs = [];
             for (i = 0; i < this.fq; i ++) {
 
                 firework = this.FireworkInstance();
@@ -49,24 +49,24 @@ const Firework  = {
                 firework.y = Utils.randomNumberBetween(100, Utils.canvasHeight - 100);
                 this.stage.addChild(firework);
                 this.fs.push(firework);
-                delay = Utils.randomIntBetween(0, 1);
-                setTimeout(firework.start, delay);
+                //delay = Utils.randomIntBetween(0, 1);
+                firework.start();
+                // setTimeout(firework.start, delay);
             }
-        
+            this.app.ticker.add(this.ticker.bind(this));
         },
         stop: function () {
+            console.log('stop')
             this.app.destroy(true);
         },
         resize: function (w, h) {
-            this.canvasWidth = Utils.returnCanvasWidth();
-            this.canvasHeight = 400;
-            this.halfHeight = this.canvasHeight / 2;
-            this.halfWidth = this.canvasWidth / 2;
-            this.stage.removeChildren();
-            Utils.setWidthAndHeight(w, h);
+           
+          
+            //this.stage.removeChildren();
+            // Utils.setWidthAndHeight(w, h);
             this.app.renderer.resize(w, h)
-            this.fs = [];
-            this.build();
+            // this.fs = [];
+            // this.build();
         },
         FireworkInstance: function () {
             let cont = new PIXI.Container(),
@@ -126,14 +126,15 @@ const Firework  = {
         },
         Beam: function (color) {
             let cont = new PIXI.Container();
-            let shape = new PIXI.Graphics();
-            shape.beginFill(color).drawCircle(0,0,1).endFill();
-            cont.addChild(shape);
-            cont.shape = shape;
+            let beam = new PIXI.Sprite.from('/bmps/dot.png')
+            beam.tint = color;
+            beam.width = beam.height = Utils.randomNumberBetween(1,3);
+            cont.addChild(beam);
+            cont.shape = beam;
+            
             return cont;
         },
         ticker: function () {
-
 
 
             for (let j = 0; j < this.fq; j++) {

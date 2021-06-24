@@ -6,7 +6,7 @@ export default class Breathing extends Component {
 
 componentDidMount = () => {
     Utils.getWidthAndHeight()
-    // BreathingAnimation.init(Utils.canvasWidth, Utils.canvasHeight);
+
     Fireworks.init(Utils.canvasWidth, Utils.canvasHeight);
     window.addEventListener('resize', this.resizeHandler);
 }
