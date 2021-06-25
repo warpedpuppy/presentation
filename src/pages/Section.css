@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px 50px;
+    padding: 50px 10px;
 }
 
 .section-short-text.center {
@@ -23,8 +23,8 @@
     align-items: center;
 }
 
-.section-short-text.center h2 {
-    /* text-align: left; */
+.section-short-text.center ul {
+    font-weight: bold;
 }
 
 .section-bottom {

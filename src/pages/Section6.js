@@ -6,6 +6,7 @@ export default function Section4() {
         <div className="section-shell">
         <Breathing />
         <div className="section-short-text center">
+            <div>
             <h2>Bonus</h2>
             <ul>
                 <li>
@@ -31,6 +32,7 @@ export default function Section4() {
                     </ul>
                 </li>
             </ul>
+            </div>
             </div>
         </div>
     )

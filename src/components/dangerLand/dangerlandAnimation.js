@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import Utils from '../utils/utils';
-
+import Tweens from '../utils/Tweens';
 const DangerLand = {
     canvasHeight: 400,
     gravity: 1,
@@ -23,7 +23,7 @@ const DangerLand = {
         const container = new PIXI.Container();
 
         app.stage.addChild(container);
-
+        app.stage.alpha = 0;
         this.app = app;
 
         if (!app.loader.resources['/ss/runningMan.json']) {
@@ -46,7 +46,7 @@ const DangerLand = {
               this.balls.push(ball);
           }
           
-       
+          Tweens.tween(app.stage, 1, {alpha: [0,1]});
        
     },
     onRunnerLoaded: function () {
@@ -86,6 +86,7 @@ const DangerLand = {
         
     },
     ticker: function (delta) {
+        Tweens.animate();
         if (this.runner.isJumping) {
             this.runner.vy -= this.gravity;
             this.runner.y -= this.runner.vy;
