@@ -14,7 +14,6 @@ export default function Section4() {
                         <li>Write a recursive fibonacci sequence</li>
                         <li>Define restful architecture</li>
                         <li>What are the four principals of OOP</li>
-                        <li>Discuss your thought process on whether to put code client side or server side</li>
                     </ul>
                 </li>
                 <li>Topics worthy of further research: 
@@ -28,6 +27,7 @@ export default function Section4() {
                         <li>Searching Algorithms</li>
                         <li>Stacks, queues</li>
                         <li>Hash maps</li>
+                        <li>coding your own tweening engine</li>
                     </ul>
                 </li>
             </ul>

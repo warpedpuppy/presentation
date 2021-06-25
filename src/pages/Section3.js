@@ -1,6 +1,6 @@
 import React from 'react'
 import PezBackground from '../components/PezBackground/PezBackground';
-import './Section3.css';
+import './Section.css';
 export default function Section3() {
     return (
         <div id="section-shell">

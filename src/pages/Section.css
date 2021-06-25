@@ -32,7 +32,7 @@
     align-items: flex-end;
     top: auto;
     background: rgb(2, 0, 36);
-    background: linear-gradient(260deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 96, 1) 0%, rgba(9, 9, 121, 0) 74%);
+    background: linear-gradient(260deg, rgba(2, 0, 36, 1) 0%, rgba(43, 43, 96, 1) 76%, rgba(9, 9, 121, 0) 100%);
 }
 
 .section-top-left {

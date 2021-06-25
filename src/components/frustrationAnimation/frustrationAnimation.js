@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import Utils from '../utils/utils';
-
+import Tweens from '../utils/Tweens';
 const DangerLand = {
     colors: [0x446996,0x2d4264,0x182033,0xb2826,0x1f3423,0xb482a,0x364a2b,0x262a16,0x3a4016,0x888136,0x635021,0x533217,0x5c2a1d],
     dots: [],
@@ -39,14 +39,15 @@ const DangerLand = {
             this.dots.push(sprite)
         }
         particleContainer.scale.set(1 / window.devicePixelRatio)
+        app.stage.alpha = 0;
+        
         app.stage.addChild(particleContainer);
         particleContainer.x = (Utils.canvasWidth / 2) ;
         particleContainer.y = (Utils.canvasHeight / 2) ;
         this.particleContainer = particleContainer;
 
-        console.log(Utils.canvasWidth, Utils.canvasHeight)
 
-     
+        Tweens.tween(app.stage, 3, {alpha: [0,1]});
         app.ticker.add(this.ticker.bind(this));
     },
    
@@ -63,6 +64,7 @@ const DangerLand = {
         
     },
     ticker: function (delta) {
+        Tweens.animate();
         this.particleContainer.rotation += 0.004;
         for (let i = 0; i < this.totalItems; ++i) {
 
