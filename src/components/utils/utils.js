@@ -410,12 +410,11 @@ const Utils =  {
     return this.intersects
   },
   returnCanvasWidth () {
-    console.log(window.devicePixelRatio)
-    const scale = (window.devicePixelRatio < 3) ? 1 : window.devicePixelRatio
+  
     return ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) )
   },
   returnCanvasHeight () {
-    const scale = (window.devicePixelRatio < 3) ? 1 : window.devicePixelRatio
+  
     return ((window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) )
   },
   centerOnStage (mc, canvasWidth, canvasHeight) {
