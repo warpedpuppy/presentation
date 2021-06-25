@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PezAnimation from './pezAnimation';
-import Utils from './utils';
+import Utils from '../utils/utils';
 export default class PezBackground extends Component {
 
   componentDidMount = async () => {

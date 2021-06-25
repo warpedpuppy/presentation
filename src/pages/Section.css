@@ -86,8 +86,12 @@
     overflow-y: scroll;
 }
 
+.danger-land h2 {
+    font-size: 15px;
+}
+
 #wiggle-now {
-    font-size: 80px;
+    font-size: 40px;
     font-style: italic;
     margin: 0 10px;
     text-transform: capitalize;
@@ -127,6 +131,19 @@
         position: relative;
         top: 0;
         align-items: flex-start;
+    }
+    .danger-land h2 {
+        font-size: 1.5rem;
+    }
+    #wiggle-now {
+        font-size: 80px;
+        font-style: italic;
+        margin: 0 0px;
+        padding: 0;
+        text-transform: capitalize;
+        animation: 0.25s linear wiggle;
+        display: inline-block;
+        animation-iteration-count: infinite;
     }
 }
 

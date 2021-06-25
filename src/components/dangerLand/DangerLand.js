@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DangerLandAnimation from './dangerlandAnimation';
-import Utils from './utils';
+import Utils from '../utils/utils';
 import './DangerLand.css';
 export default class DangerLand extends Component {
 

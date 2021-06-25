@@ -1,4 +1,4 @@
-import Utils from './utils'
+import Utils from '../utils/utils';
 import Assets from './assetCreation'
 export default function RainbowSwirls() {
   return {
@@ -124,7 +124,6 @@ export default function RainbowSwirls() {
     newXY () {
       // const buffer = 0
       // const perc = 0.5
-      console.log(this.quadrant)
 
       if (this.quadrant === 'TL') {
         //this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),

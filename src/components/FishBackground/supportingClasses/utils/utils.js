@@ -411,11 +411,11 @@ const Utils =  {
   },
   returnCanvasWidth () {
     const scale = (window.devicePixelRatio < 3) ? 1 : window.devicePixelRatio
-    return ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) * scale)
+    return ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) )
   },
   returnCanvasHeight () {
     const scale = (window.devicePixelRatio < 3) ? 1 : window.devicePixelRatio
-    return ((window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) * scale)
+    return ((window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) )
   },
   centerOnStage (mc, canvasWidth, canvasHeight) {
     mc.body.x = (canvasWidth - mc.body.getBounds().width) / 2

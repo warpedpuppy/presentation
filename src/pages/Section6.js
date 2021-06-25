@@ -17,7 +17,7 @@ export default function Section4() {
                         <li>Discuss your thought process on whether to put code client side or server side</li>
                     </ul>
                 </li>
-                <li>If you ever get bored
+                <li>Topics worthy of further research: 
                     <ul>
                         <li>Object pooling</li>
                         <li>Recursive functions</li>

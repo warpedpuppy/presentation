@@ -22,7 +22,7 @@ const Firework  = {
             Utils.setWidthAndHeight(w, h);
 
             const app = new PIXI.Application({
-                    width: w, height: h,  backgroundAlpha: 0, resolution: window.devicePixelRatio || 1, autoResize: true
+                    width: w, height: h,  backgroundAlpha: 0, resolution: 1, autoResize: true
             });
             document.getElementById("breathing").appendChild(app.view);
 

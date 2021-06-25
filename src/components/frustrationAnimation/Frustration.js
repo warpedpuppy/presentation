@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FrustrationAnimation from './frustrationAnimation';
-import Utils from './utils';
+import Utils from '../utils/utils';
 export default class Frustration extends Component {
 
 componentDidMount = () => {

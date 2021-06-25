@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import Utils from './utils';
+import Utils from '../utils/utils';
 
 const DangerLand = {
     colors: [0x446996,0x2d4264,0x182033,0xb2826,0x1f3423,0xb482a,0x364a2b,0x262a16,0x3a4016,0x888136,0x635021,0x533217,0x5c2a1d],
@@ -10,7 +10,7 @@ const DangerLand = {
 
         Utils.setWidthAndHeight(w, h);
         const app = new PIXI.Application({
-        width: w, height: h,  backgroundAlpha:0, resolution: window.devicePixelRatio || 1, autoResize:true
+        width: w, height: h,  backgroundAlpha:0, resolution: 1, autoResize:true
         });
         document.getElementById("frustration").appendChild(app.view);
         
@@ -19,7 +19,7 @@ const DangerLand = {
         app.stage.addChild(container);
 
         this.app = app;
-        let arr = Utils.distributeAroundCircle ({x:0, y: 0}, this.totalItems, 300)
+        let arr = Utils.distributeAroundCircle ({x:0, y: 0}, this.totalItems, 400 )
 
         let particleContainer = this.particleContainer = new PIXI.ParticleContainer();
         particleContainer.pivot.set(0.5)
@@ -38,10 +38,10 @@ const DangerLand = {
             particleContainer.addChild(sprite);
             this.dots.push(sprite)
         }
-
+        particleContainer.scale.set(1 / window.devicePixelRatio)
         app.stage.addChild(particleContainer);
-        particleContainer.x = (Utils.canvasWidth / 2) / window.devicePixelRatio;
-        particleContainer.y = (Utils.canvasHeight / 2) / window.devicePixelRatio;
+        particleContainer.x = (Utils.canvasWidth / 2) ;
+        particleContainer.y = (Utils.canvasHeight / 2) ;
         this.particleContainer = particleContainer;
 
         console.log(Utils.canvasWidth, Utils.canvasHeight)
@@ -54,8 +54,8 @@ const DangerLand = {
        
         Utils.setWidthAndHeight(w, h);
         this.app.renderer.resize(w, h)
-        this.particleContainer.x = (Utils.canvasWidth / 2) / window.devicePixelRatio;
-        this.particleContainer.y = (Utils.canvasHeight / 2) / window.devicePixelRatio;
+        this.particleContainer.x = (Utils.canvasWidth / 2) ;
+        this.particleContainer.y = (Utils.canvasHeight / 2) ;
     },
     stop: function () {
 

@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import Utils from './utils';
+import Utils from '../utils/utils';
 
 const DangerLand = {
     canvasHeight: 400,
@@ -16,7 +16,7 @@ const DangerLand = {
 
         Utils.setWidthAndHeight(w, h);
         const app = new PIXI.Application({
-        width: w, height: this.canvasHeight,  backgroundColor: 0xFF00FF, resolution: window.devicePixelRatio || 1,
+        width: w, height: this.canvasHeight,  backgroundColor: 0xFF00FF, resolution: 1,
         });
         document.getElementById("danger-land").appendChild(app.view);
         

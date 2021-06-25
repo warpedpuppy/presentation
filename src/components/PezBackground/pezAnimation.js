@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import RainbowSwirls from './rainbowSwirls';
-import Utils from './utils';
+import Utils from '../utils/utils';
 
 const PezAnimation = {
     rainbowSwirlsQ: 4,
@@ -10,7 +10,7 @@ const PezAnimation = {
         this.rainbowSwirlInstances = [];
         Utils.setWidthAndHeight(w, h);
         const app = new PIXI.Application({
-        width: w, height: h,  backgroundAlpha: 0, resolution: window.devicePixelRatio || 1,
+        width: w, height: h,  backgroundAlpha: 0, resolution: 1,
         });
         document.getElementById("pez-canvas").appendChild(app.view);
         

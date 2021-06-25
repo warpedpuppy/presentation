@@ -58,7 +58,8 @@ export default function SwimAnimations() {
       const app = this.app = Assets.Application({
         width: this.utils.canvasWidth,
         height: this.utils.canvasHeight,
-        backgroundAlpha: 0
+        backgroundAlpha: 0,
+        resolution: 1
       })
       document.getElementById('fish-canvas').appendChild(app.view)
       this.stage = app.stage
