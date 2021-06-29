@@ -1,6 +1,5 @@
 import * as PIXI from 'pixi.js'
 import Utils from '../utils/utils';
-import Config from './animationsConfig'
 
 const AssetCreation = {
   utils: Utils,
@@ -14,14 +13,6 @@ const AssetCreation = {
   id: undefined,
   init () {
     this.id = this.id || Math.floor(Math.random()*10000);
-    if(this.rings.length !== 0)return;
-    this.ringQ = Config.bounceTotalPoints;
-    for (let i = 0; i < this.ringQ; i++) {
-      this.lines.push(this.Graphics())
-      this.rings.push(this.Sprite('transparentRing.png'))
-    }
-
-    this.coinQ = Config.flyCoinsPerTreasureChest;
   },
   Point (x, y) {
     return new PIXI.Point(x, y)

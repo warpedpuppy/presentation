@@ -1,6 +1,5 @@
 import Assets from '../../utils/assetCreation'
 import Utils from '../../utils/utils'
-import Config from '../../utils/animationsConfig'
 
 export default function Clock() {
   return {
@@ -43,7 +42,7 @@ export default function Clock() {
       this.cont.x = this.utils.canvasWidth / 2
       this.cont.y = this.utils.canvasHeight / 2
       if (this.utils.isMobileOnly) {
-        const newScale = this.cont.scale.x * Config.mobileOnlyScaling
+        const newScale = this.cont.scale.x
         this.cont.scale.set(newScale)
       }
 
