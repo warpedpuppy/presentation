@@ -1,10 +1,10 @@
 import React from 'react'
-import PezBackground from '../components/PezBackground/PezBackground';
+import CandyBackground from '../components/candyBackground/CandyBackground';
 import './Section.css';
 export default function Section3() {
     return (
         <div id="section-shell">
-            <PezBackground />
+            <CandyBackground />
             <div className="section-short-text section-bottom">
                 <h2>continuing education</h2>
                 <ul>

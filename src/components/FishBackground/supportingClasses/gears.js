@@ -1,6 +1,6 @@
-import Assets from './utils/assetCreation'
-import Utils from './utils/utils'
-import Config from './animationsConfig'
+import Assets from '../../utils/assetCreation'
+import Utils from '../../utils/utils'
+import Config from '../../utils/animationsConfig'
 
 export default function Gears() {
   return {

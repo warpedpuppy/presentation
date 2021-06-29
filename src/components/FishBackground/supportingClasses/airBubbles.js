@@ -1,5 +1,5 @@
-import Utils from './utils/utils'
-import Assets from './utils/assetCreation'
+import Utils from '../../utils/utils'
+import Assets from '../../utils/assetCreation'
 
 export default function AirBubbles() {
   return {
@@ -18,18 +18,9 @@ export default function AirBubbles() {
     times: [50, 100],
     setupBubbles (cont) {
       this.wh = this.utils.wh
-      //const hero = this.hero = this.utils.hero
       const startTimes = [0, 10, 20, 30]
       this.bubblesCont.x = this.wh.canvasWidth / 2
       this.bubblesCont.y = this.wh.canvasHeight / 2
-      // for (let i = 0; i < 4; i++) {
-      //   const ab = this.hero.airBubbles[i]
-      //   ab.y = -this.hero.fishRadius
-      //   ab.counter = 0
-      //   ab.startTime = startTimes[i]
-      //   this.expand.push(ab)
-      //   this.bubblesCont.addChild(ab)
-      // }
 
       for (let i = 0; i < 4; i++) {
         const r = Assets.Sprite('gradientRing.png')
@@ -46,7 +37,6 @@ export default function AirBubbles() {
       this.lilypads = this.utils.lilypads.array
     },
     fishExhale () {
-      // console.log(this.lilypads)
       if (!this.lilypads) return
       for (let j = 0; j < this.lilypads.length; j++) {
         const ab = this.expand[0]

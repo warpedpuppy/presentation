@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 import Utils from '../utils/utils';
 import Tweens from '../utils/Tweens';
-const DangerLand = {
+const PsychologyAnimation = {
     colors: [0x446996,0x2d4264,0x182033,0xb2826,0x1f3423,0xb482a,0x364a2b,0x262a16,0x3a4016,0x888136,0x635021,0x533217,0x5c2a1d],
     dots: [],
     totalItems: 1000,
@@ -12,14 +12,13 @@ const DangerLand = {
         const app = new PIXI.Application({
         width: w, height: h,  backgroundAlpha:0, resolution: 1, autoResize:true
         });
-        document.getElementById("frustration").appendChild(app.view);
+        document.getElementById("psychology").appendChild(app.view);
         
         const container = new PIXI.Container();
-        console.log(window.devicePixelRatio)
         app.stage.addChild(container);
 
         this.app = app;
-        let arr = Utils.distributeAroundCircle ({x:0, y: 0}, this.totalItems, 400 )
+        let arr = Utils.distributeAroundCircle({x:0, y: 0}, this.totalItems, 400 )
 
         let particleContainer = this.particleContainer = new PIXI.ParticleContainer();
         particleContainer.pivot.set(0.5)
@@ -46,37 +45,32 @@ const DangerLand = {
         particleContainer.y = (Utils.canvasHeight / 2) ;
         this.particleContainer = particleContainer;
 
-
         Tweens.tween(app.stage, 3, {alpha: [0,1]});
         app.ticker.add(this.ticker.bind(this));
     },
    
     resize: function (w, h) {
-       
         Utils.setWidthAndHeight(w, h);
         this.app.renderer.resize(w, h)
         this.particleContainer.x = (Utils.canvasWidth / 2) ;
         this.particleContainer.y = (Utils.canvasHeight / 2) ;
     },
     stop: function () {
-
         this.app.destroy(true);
-        
     },
     ticker: function (delta) {
         Tweens.animate();
         this.particleContainer.rotation += 0.004;
         for (let i = 0; i < this.totalItems; ++i) {
-
             if (i % 2 === 0) {
- this.dots[i].x = Utils.cosWave(this.dots[i].storeX, this.dots[i].variance,  this.dots[i].variantSpeed)
+                this.dots[i].x = Utils.cosWave(this.dots[i].storeX, this.dots[i].variance,  this.dots[i].variantSpeed)
             } else {
-this.dots[i].y = Utils.cosWave(this.dots[i].storeY, this.dots[i].variance,  this.dots[i].variantSpeed)
+                this.dots[i].y = Utils.cosWave(this.dots[i].storeY, this.dots[i].variance,  this.dots[i].variantSpeed)
             }
         }
     }
     
 }
-export default DangerLand;
+export default PsychologyAnimation;
 
 

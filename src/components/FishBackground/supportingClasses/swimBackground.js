@@ -1,6 +1,6 @@
-import Assets from './utils/assetCreation'
-import Utils from './utils/utils'
-import Tweens from './utils/Tweens'
+import Assets from '../../utils/assetCreation'
+import Utils from '../../utils/utils'
+import Tweens from '../../utils/Tweens'
 import FishSchool from './fishSchool'
 import LilypadsLotuses from './lilypadsLotuses'
 

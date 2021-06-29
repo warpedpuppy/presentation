@@ -20,8 +20,8 @@ resizeHandler = () => {
   render() {
     return (
       <>
-      <div id="danger-land"></div>
-      <div>hit space to jump!</div>
+        <div id="danger-land"></div>
+        <div>hit space to jump!</div>
       </>
     );
   }

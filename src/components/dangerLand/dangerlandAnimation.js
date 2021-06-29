@@ -33,12 +33,6 @@ const DangerLand = {
           } else {
             this.onRunnerLoaded.bind(this)
           }
-
-          const aligatorTextures = [];
-          for (let i = 0; i < 2; i++) {
-              const texture = PIXI.Texture.from(`aligator${i + 1}.png`);
-              aligatorTextures.push(texture);
-          }
           
           for (let i = 0; i < this.ballQ; i++) {
               let ball = PIXI.Sprite.from('/bmps/dot.png');
@@ -75,15 +69,12 @@ const DangerLand = {
         }
     },
     resize: function (w, h) {
-       
         Utils.setWidthAndHeight(w, h);
         this.runner.x = Utils.canvasWidth / 2;
         this.app.renderer.resize(w, this.canvasHeight)
     },
     stop: function () {
-
         this.app.destroy(true);
-        
     },
     ticker: function (delta) {
         Tweens.animate();
@@ -96,23 +87,17 @@ const DangerLand = {
             }
         }
         this.counter ++;
-        // console.log(this.counter % this.ballInterval);
         if (this.counter % this.ballInterval === 0 && this.balls.length > 0) {
-            //this.ballInterval = Utils.randomNumberBetween(1, 3);
-            console.log("here")
             let b = this.balls.pop()
             b.y = Utils.randomNumberBetween(400 - this.runner.height, 300);
             b.x = Utils.canvasWidth;
-
             this.app.stage.addChild(b)
-
             this.ballsOnStage.push(b)
         }
         //don't do this in production
         for (let i = 0; i < this.ballsOnStage.length; i++) {
             let b = this.ballsOnStage[i];
             b.x -= b.vx;
-
             if (b.x < 0) {
                 b.x = Utils.canvasWidth;
             }

@@ -1,10 +1,10 @@
 import React from 'react'
-import Breathing from '../components/breathing/Breathing';
+import Fireworks from '../components/fireworks/Fireworks';
 export default function Section4() {
     return (
 
         <div className="section-shell">
-        <Breathing />
+        <Fireworks />
         <div className="section-short-text center">
             <div>
             <h2>Bonus</h2>
@@ -17,7 +17,12 @@ export default function Section4() {
                         <li>What are the four principals of OOP</li>
                     </ul>
                 </li>
-                <li>Topics worthy of further research: 
+                <li>go shallower: 
+                    <ul>
+                        <li>CMSs</li>
+                    </ul>
+                </li>
+                <li>go deeper: 
                     <ul>
                         <li>Object pooling</li>
                         <li>Recursive functions</li>
@@ -29,6 +34,13 @@ export default function Section4() {
                         <li>Stacks, queues</li>
                         <li>Hash maps</li>
                         <li>coding your own tweening engine</li>
+                    </ul>
+                </li>
+                <li>final note: 
+                    <ul>
+                        <li>smart enough in the moment -- geodesic dome emulator</li>
+                        <li>remember your self-presentation</li>
+                        <li>agism / sexism / homophobia</li>
                     </ul>
                 </li>
             </ul>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PezAnimation from './pezAnimation';
+import CandyAnimation from './candyAnimation';
 import Utils from '../utils/utils';
 export default class PezBackground extends Component {
 
@@ -9,18 +9,18 @@ export default class PezBackground extends Component {
   }
   createSwirls = () => {
     Utils.getWidthAndHeight()
-    PezAnimation.init(Utils.canvasWidth, Utils.canvasHeight);
+    CandyAnimation.init(Utils.canvasWidth, Utils.canvasHeight);
   }
   componentWillUnmount = () => {
-    PezAnimation.destroy();
+    CandyAnimation.destroy();
     window.removeEventListener('resize', this.resizeHandler);
   }
   resizeHandler = () => {
     Utils.getWidthAndHeight()
-    PezAnimation.resize(Utils.canvasWidth, Utils.canvasHeight);
+    CandyAnimation.resize(Utils.canvasWidth, Utils.canvasHeight);
   }
 
   render() {
-    return <div id="pez-canvas"></div>;
+    return <div id="candy-canvas"></div>;
   }
 }

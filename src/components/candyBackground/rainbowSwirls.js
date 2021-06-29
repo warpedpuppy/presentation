@@ -1,5 +1,5 @@
 import Utils from '../utils/utils';
-import Assets from './assetCreation'
+import Assets from '../utils/assetCreation'
 export default function RainbowSwirls() {
   return {
     cont: undefined,
@@ -97,9 +97,6 @@ export default function RainbowSwirls() {
         s.y = newPos.y
         s.x = newPos.x
       }
-
-      // let previousYVal = this.objectPool[this.objectPool.length -1].y;
-
       const prevIndex = (this.objectPoolCounter > 1) ? this.objectPoolCounter - 2 : this.objectPool.length - 1
       const prevX = this.objectPool[prevIndex].x
       const prevY = this.objectPool[prevIndex].y
@@ -122,33 +119,22 @@ export default function RainbowSwirls() {
       this.cont.addChild(s)
     },
     newXY () {
-      // const buffer = 0
-      // const perc = 0.5
-
       if (this.quadrant === 'TL') {
-        //this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
-        //this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
         return {
           x: this.utils.canvasWidth * 0.25,
           y:  this.utils.canvasHeight * 0.25
         }
       } if (this.quadrant === 'TR') {
-        // x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
-        //   y: this.utils.randomNumberBetween(buffer, this.utils.canvasHeight * perc)
         return {
           x: this.utils.canvasWidth * 0.75,
           y:  this.utils.canvasHeight * 0.25
         }
       } if (this.quadrant === 'BL') {
-        // x: this.utils.randomNumberBetween(buffer, this.utils.canvasWidth * perc),
-          // y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
         return {
           x: this.utils.canvasWidth * 0.75,
           y:  this.utils.canvasHeight * 0.75
         }
       } if (this.quadrant === 'BR') {
-         // x: this.utils.randomNumberBetween(this.utils.canvasWidth * perc, this.utils.canvasWidth),
-          // y: this.utils.randomNumberBetween(this.utils.canvasHeight * perc, this.utils.canvasHeight)
         return {
           x: this.utils.canvasWidth * 0.25,
           y:  this.utils.canvasHeight * 0.75
@@ -161,12 +147,8 @@ export default function RainbowSwirls() {
     removeFromStage () {
       this.parentCont.removeChild(this.cont)
     },
-    resize () {
-
-    },
     animate () {
       this.testCounter++;
-
       if (this.testCounter % this.interval === 0) {this.newBrick(); this.testCounter = 0;}
     }
   }

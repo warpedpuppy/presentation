@@ -1,5 +1,5 @@
 import React from 'react';
-import Frustration from '../components/frustrationAnimation/Frustration';
+import Psychology from '../components/psychologyAnimation/Psychology';
 import './Section.css';
 export default function Section1() {
     return (
@@ -13,7 +13,7 @@ export default function Section1() {
                 <li>hospitality level customer service</li>
             </ul>
         </div>
-             <Frustration />
+             <Psychology />
         </div>
     )
 }

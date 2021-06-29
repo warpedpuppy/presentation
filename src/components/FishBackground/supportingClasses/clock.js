@@ -1,6 +1,6 @@
-import Assets from './utils/assetCreation'
-import Utils from './utils/utils'
-import Config from './animationsConfig'
+import Assets from '../../utils/assetCreation'
+import Utils from '../../utils/utils'
+import Config from '../../utils/animationsConfig'
 
 export default function Clock() {
   return {
@@ -16,28 +16,22 @@ export default function Clock() {
       const hourhand = this.hourhand = Assets.Sprite('/hourhand.png')
       
       hourhand.anchor.set(0.5)
-      // hourhand.tint = 0xFF0000;
       this.cont.addChild(hourhand)
 
       const minutehand = this.minutehand = Assets.Sprite('/minutehand.png')
       minutehand.anchor.set(0.5)
-      // minutehand.tint = 0x000000;
       this.cont.addChild(minutehand)
 
       const secondhand = this.secondhand = Assets.Sprite('/secondhand.png')
       secondhand.anchor.set(0.5)
-      // secondhand.tint = 0xFF00FF;
       this.cont.addChild(secondhand)
 
       const d = this.d = new Date()
       const h = d.getHours()
       const m = d.getMinutes()
       const s = d.getSeconds()
-
       hourhand.rotation = h * this.hourToRadians
-
       minutehand.rotation = m * this.minutesToRadians
-
       secondhand.rotation = s * this.secondsToRadians
 
       this.demoH = 12
@@ -56,7 +50,6 @@ export default function Clock() {
       return this
     },
     addToStage () {
-     
       this.parentCont.addChildAt(this.cont, 0)
     },
     removeFromStage () {
@@ -81,8 +74,6 @@ export default function Clock() {
         }
       } else {
         this.counter++
-
-        // console.log(this.counter)
         if (this.counter) {
           this.secondhand.alpha = 0
           const increment = 30
@@ -99,14 +90,11 @@ export default function Clock() {
               this.demoM = 0
               if (this.demoH === 12) {
                 this.demoH = 1
-                // toggle day and night
               } else {
                 this.demoH++
               }
             }
           }
-
-          // if(this.demoS === 60)this.demoH = 0;
         }
       }
     }

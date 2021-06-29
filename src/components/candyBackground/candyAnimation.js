@@ -12,7 +12,7 @@ const PezAnimation = {
         const app = new PIXI.Application({
         width: w, height: h,  backgroundAlpha: 0, resolution: 1,
         });
-        document.getElementById("pez-canvas").appendChild(app.view);
+        document.getElementById("candy-canvas").appendChild(app.view);
         
         const container = new PIXI.Container();
 
@@ -28,26 +28,22 @@ const PezAnimation = {
           this.rainbowSwirlInstances.push(this.tileColumn)
         }
         
-        // Listen for animate update
         app.ticker.add(this.ticker.bind(this));
     },
     resize: function (w, h) {
-
         Utils.setWidthAndHeight(w, h);
         this.app.renderer.resize(w, h)
     },
     destroy: function () {
         this.app.destroy(true);
-        
         for (let i = 0; i < this.rainbowSwirlsQ; i++) {
-        this.rainbowSwirlInstances[i].removeFromStage()
+            this.rainbowSwirlInstances[i].removeFromStage()
         }
-      
     },
     ticker: function (delta) {
         for (let i = 0; i < this.rainbowSwirlsQ; i++) {
             this.rainbowSwirlInstances[i].animate()
-          }
+        }
     }
     
 }

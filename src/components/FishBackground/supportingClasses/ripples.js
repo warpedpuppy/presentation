@@ -1,5 +1,5 @@
-import Assets from './utils/assetCreation'
-import Utils from './utils/utils'
+import Assets from '../../utils/assetCreation'
+import Utils from '../../utils/utils'
 
 export default function Ripples() {
   return {
@@ -24,7 +24,7 @@ export default function Ripples() {
 
       for (let i = 0; i < this.totalSprites; i++) {
         const ring = Assets.Sprite('gradientRing.png')
-
+        ring.alpha = 0;
         ring.anchor.x = ring.anchor.y = 0.5
         ring.startScale = 0.1
         ring.scale.set(ring.startScale)
@@ -102,8 +102,6 @@ export default function Ripples() {
       const pos = e.data.global
       if (this.counter % 10 === 0) {
         if (this.growing.indexOf(this.ripples[this.opc]) !== -1) return
-
-        // this.ripples[this.opc].tint = Math.random() * 0xE8D4CD;
         this.ripples[this.opc].x = pos.x
         this.ripples[this.opc].y = pos.y
         this.ripples[this.opc].alpha = 0.75

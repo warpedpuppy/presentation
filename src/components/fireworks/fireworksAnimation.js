@@ -1,10 +1,7 @@
-
-
 import Utils from '../utils/utils';
 import * as PIXI from 'pixi.js';
-import PixiFps from "pixi-fps";
+// import PixiFps from "pixi-fps";
  
-
 const Firework  = {
         utils: Utils,
         fs: [],
@@ -13,35 +10,22 @@ const Firework  = {
         range: 100,
         colors: [ 0xff7575, 0xffb775, 0xfff175, 0xc3ff76, 0x7bffb8, 0x7de8ff, 0x799fff, 0xff93f7],
         init: function (w,h) {
-         
-            this.canvasWidth = Utils.canvasWidth;
-            this.canvasHeight = Utils.canvasHeight;
-            this.halfHeight = this.canvasHeight / 2;
-            this.halfWidth = this.canvasWidth / 2;
 
             Utils.setWidthAndHeight(w, h);
-
             const app = new PIXI.Application({
                     width: w, height: h,  backgroundAlpha: 0, resolution: 1, autoResize: true
             });
             document.getElementById("breathing").appendChild(app.view);
-
-           
-         
            this.app = app;
            this.stage = app.stage;
-           const fpsCounter = new PixiFps();
- 
-           this.stage.addChild(fpsCounter);
+        //    const fpsCounter = new PixiFps();
+        //    this.stage.addChild(fpsCounter);
            this.build();
         },
         build: function () {
-            
-            console.log("build")
             let i, firework;
             this.fs = [];
             for (i = 0; i < this.fq; i ++) {
-
                 firework = this.FireworkInstance();
                 firework.start = firework.start.bind(firework);
                 firework.restart = firework.restart.bind(firework);
@@ -49,24 +33,15 @@ const Firework  = {
                 firework.y = Utils.randomNumberBetween(100, Utils.canvasHeight - 100);
                 this.stage.addChild(firework);
                 this.fs.push(firework);
-                //delay = Utils.randomIntBetween(0, 1);
                 firework.start();
-                // setTimeout(firework.start, delay);
             }
             this.app.ticker.add(this.ticker.bind(this));
         },
         stop: function () {
-            console.log('stop')
             this.app.destroy(true);
         },
         resize: function (w, h) {
-           
-          
-            //this.stage.removeChildren();
-            // Utils.setWidthAndHeight(w, h);
             this.app.renderer.resize(w, h)
-            // this.fs = [];
-            // this.build();
         },
         FireworkInstance: function () {
             let cont = new PIXI.Container(),
@@ -83,7 +58,6 @@ const Firework  = {
             cont.beams = [];
             for ( i = 0; i < numberOfBeams; i++) {
                 myBeam1 = this.Beam(color);
-                // myBeam1.rotation = Utils.deg2rad(Math.random()*360);
                 myBeam1.scaleX = Utils.randomNumberBetween(0.2,1)
                 myBeam1.scaleY = Utils.randomNumberBetween(0.2,1)
                 cont.addChild(myBeam1);
@@ -121,9 +95,6 @@ const Firework  = {
             }
             return cont;
         },
-        alphaOne: function (mc) {
-           mc.alpha = 1;
-        },
         Beam: function (color) {
             let cont = new PIXI.Container();
             let beam = new PIXI.Sprite.from('/bmps/dot.png')
@@ -131,18 +102,13 @@ const Firework  = {
             beam.width = beam.height = Utils.randomNumberBetween(1,3);
             cont.addChild(beam);
             cont.shape = beam;
-            
             return cont;
         },
         ticker: function () {
-
-
             for (let j = 0; j < this.fq; j++) {
                 let firework =  this.fs[j]
                 firework.cf ++;
-
                 for (let i = 0; i < firework.numberOfBeams; i++) {
-
                     firework.beams[i].shape.y += firework.beams[i].speed;
                     if (firework.cf >= firework.twinkleStart && firework.cf < firework.fadeOutStart) {
                         firework.beams[i].alpha = Math.random() * 1;
@@ -150,12 +116,9 @@ const Firework  = {
                     firework.alpha = 1;
                     firework.beams[i].alpha *= 0.95;
                 }
- 
                  if (firework.cf >= firework.end) {
                     firework.restart();
                 }
-              
-               
             }
         }
     }
