@@ -8,6 +8,9 @@ export default function Section5() {
              <div className="section-short-text  center">
             <h2>practices that took me too long to incorporate</h2>
             <ul>
+                <li>NEVER show client unfinished work. . . . </li>
+                <li>tack % onto estimates. . . </li>
+                <li>consider doign css first for client happiness. . . </li>
                 <li>when working in a huge application. . . . </li>
                 <li>Keep your eye on mutations. . . . </li>
                 <li>Do you know what 'this' currently is? </li>
