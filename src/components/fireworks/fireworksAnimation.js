@@ -8,6 +8,7 @@ const Firework  = {
         fq: 500,
         starQ: 300,
         range: 100,
+        topAlpha: 0.75,
         colors: [ 0xff7575, 0xffb775, 0xfff175, 0xc3ff76, 0x7bffb8, 0x7de8ff, 0x799fff, 0xff93f7],
         init: function (w,h) {
 
@@ -86,7 +87,7 @@ const Firework  = {
                     beam = this.beams[i];
                     beam.rotation = that.utils.deg2rad(Math.random() * 360);
                     beam.shape.x = beam.shape.y = 0;
-                    beam.alpha = 1;
+                    beam.alpha = this.topAlpha;
                     beam.shape.isTweening = false;
                     this.distance = that.utils.randomNumberBetween(50, 150);
                     
@@ -111,9 +112,9 @@ const Firework  = {
                 for (let i = 0; i < firework.numberOfBeams; i++) {
                     firework.beams[i].shape.y += firework.beams[i].speed;
                     if (firework.cf >= firework.twinkleStart && firework.cf < firework.fadeOutStart) {
-                        firework.beams[i].alpha = Math.random() * 1;
+                        firework.beams[i].alpha = Math.random() * this.topAlpha;
                     }
-                    firework.alpha = 1;
+                    firework.alpha = this.topAlpha;
                     firework.beams[i].alpha *= 0.95;
                 }
                  if (firework.cf >= firework.end) {

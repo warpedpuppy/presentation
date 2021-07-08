@@ -11,9 +11,10 @@ export default function Section5() {
                 <li>NEVER show client unfinished work. . . . </li>
                 <li>tack % onto estimates. . . </li>
                 <li>consider doign css first for client happiness. . . </li>
+                <li>consider making a console log function that is dependent on a boolean. . . </li>
+                <li>never do not include steps for replication when asking for help. . . </li>
                 <li>when working in a huge application. . . . </li>
                 <li>Keep your eye on mutations. . . . </li>
-                <li>Do you know what 'this' currently is? </li>
                 <li>Keep your eye on "this". . . . </li>
                 <li>Reverse engineering is fair game!</li>
                 <li>Honor your artists!</li>
