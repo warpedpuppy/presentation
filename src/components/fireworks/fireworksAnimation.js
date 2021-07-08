@@ -100,6 +100,7 @@ const Firework  = {
             let cont = new PIXI.Container();
             let beam = new PIXI.Sprite.from('/bmps/dot.png')
             beam.tint = color;
+            beam.alpha = this.topAlpha;
             beam.width = beam.height = Utils.randomNumberBetween(1,3);
             cont.addChild(beam);
             cont.shape = beam;
