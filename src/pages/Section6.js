@@ -40,7 +40,6 @@ export default function Section4() {
                     <ul>
                         <li>smart enough in the moment -- geodesic dome emulator</li>
                         <li>remember your self-presentation</li>
-                        <li>agism / sexism / homophobia</li>
                     </ul>
                 </li>
             </ul>
