@@ -11,6 +11,8 @@ export default function Section5() {
                 <li>NEVER show client unfinished work. . . . </li>
                 <li>tack % onto estimates. . . </li>
                 <li>consider doign css first for client happiness. . . </li>
+                <li>don't underbill in an attempt to impress clients -- you will have set up false expectations for future work.</li>
+                <li>the prize for the pie eating contest is more pie. . .</li>
                 <li>consider making a console log function that is dependent on a boolean. . . </li>
                 <li>never do not include steps for replication when asking for help. . . </li>
                 <li>when working in a huge application. . . . </li>
