@@ -23,10 +23,8 @@ export default function Welcome() {
              
             </div>
             <div className="welcome-text">
-                    <blockquote>Aren&apos;t you worried all those graphics will distract from the content?</blockquote>
-                    <cite>my partner, concerned</cite>
-                    <blockquote>The graphics, and how they were built, are a second tier of content!</blockquote>
-                    <cite>me, justifiying</cite>
+                    <blockquote>I am Ted, a grumpy Mainer.</blockquote>
+                    <blockquote>Pleasure to meet you!</blockquote>
             </div>
         </div>
     )

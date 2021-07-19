@@ -28,7 +28,7 @@
     padding: 0 50px 0 0;
     align-items: flex-end;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(165, 23, 23, 0.25);
 }
 
 #welcome .welcome-text p {
@@ -37,6 +37,10 @@
 
 #welcome .welcome-text p {
     margin: 10px 20px;
+}
+
+#welcome .welcome-text blockquote {
+    font-weight: bold;
 }
 
 #welcome div:nth-child(1) {
