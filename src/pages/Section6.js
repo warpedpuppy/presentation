@@ -10,7 +10,7 @@ export default function Section4() {
             <h2>Bonus</h2>
             <ul>
                 <li>
-                    Toughest interview questions;
+                    Toughest interview questions:
                     <ul>
                         <li>Write a recursive fibonacci sequence</li>
                         <li>Define restful architecture</li>

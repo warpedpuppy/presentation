@@ -7,10 +7,10 @@ export default function Section1() {
             <div className="section-short-text center">
                 <h2>psychology of the industry</h2>
                 <ul>
-                    <li>enjoy the ride</li>
+                    <li>never fixéd mark, so enjoy the ride</li>
                     <li>concurrent techs</li>
                     <li>substantive v. procedural knowledge</li>
-                    <li>hospitality level customer service</li>
+                    <li>hospitality-industry level customer service</li>
                 </ul>
             </div>
              <Psychology />

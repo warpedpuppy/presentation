@@ -9,6 +9,7 @@ export default function Section3() {
                 <h2>continuing education</h2>
                 <ul>
                     <li>job boards</li>
+                    <li>videos, docs</li>
                     <li>mozilla css videos</li>
                     <li>this can be an opportunity!</li>
                 </ul>
