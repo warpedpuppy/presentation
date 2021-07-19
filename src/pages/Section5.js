@@ -23,8 +23,9 @@ export default function Section5() {
                 <li>Github. . .</li>
                 <li>Avoid solution spewing. . .</li>
                 <li>Fear not the logs or the error message. . .</li>
+                <li>Identify guesses as guesses. . .</li>
+                <li>"I don't know" is trait of maturity</li>
                 <li>Ghosts in the machine. . . </li>
-                <li>if you are guessing, make sure you identify your response as a guess and explain why you think it is a logical possibility. But also maybe just say "I don't know"</li>
             </ul>
             </div>
         </div>
