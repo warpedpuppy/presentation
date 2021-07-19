@@ -10,7 +10,7 @@ export default function Section3() {
                 <ul>
                     <li>job boards</li>
                     <li>mozilla css videos</li>
-                    <li>enjoy it</li>
+                    <li>this can be an opportunity!</li>
                 </ul>
             </div>
         </div>
