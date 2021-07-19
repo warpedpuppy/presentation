@@ -24,7 +24,8 @@ export default function Section5() {
                 <li>Avoid solution spewing. . .</li>
                 <li>Fear not the logs or the error message. . .</li>
                 <li>Identify guesses as guesses. . .</li>
-                <li>"I don't know" is trait of maturity</li>
+                <li>"I don't know" is trait of maturity. . . </li>
+                <li>Remember OG metatags</li>
                 <li>Ghosts in the machine. . . </li>
             </ul>
             </div>
