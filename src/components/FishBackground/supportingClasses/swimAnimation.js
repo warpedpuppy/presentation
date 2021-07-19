@@ -76,7 +76,7 @@ export default function SwimAnimations() {
       }
     },
     pause (boolean) {
-      this.action = boolean
+      this.action = !this.action;
     },
     buildGame () {
       const { spritesheet } = this.loader.resources['/ss/ss.json']

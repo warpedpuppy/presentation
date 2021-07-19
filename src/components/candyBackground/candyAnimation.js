@@ -5,6 +5,7 @@ import Utils from '../utils/utils';
 const PezAnimation = {
     rainbowSwirlsQ: 4,
     rainbowSwirlInstances: [],
+    pauseBoolean: false,
     init: function (w, h) {
 
         this.rainbowSwirlInstances = [];
@@ -34,6 +35,9 @@ const PezAnimation = {
         Utils.setWidthAndHeight(w, h);
         this.app.renderer.resize(w, h)
     },
+    pause: function () {
+        this.pauseBoolean = !this.pauseBoolean;
+    },
     destroy: function () {
         this.app.destroy(true);
         for (let i = 0; i < this.rainbowSwirlsQ; i++) {
@@ -41,9 +45,12 @@ const PezAnimation = {
         }
     },
     ticker: function (delta) {
-        for (let i = 0; i < this.rainbowSwirlsQ; i++) {
-            this.rainbowSwirlInstances[i].animate()
+        if (!this.pauseBoolean) {
+            for (let i = 0; i < this.rainbowSwirlsQ; i++) {
+                this.rainbowSwirlInstances[i].animate()
+            }
         }
+       
     }
     
 }

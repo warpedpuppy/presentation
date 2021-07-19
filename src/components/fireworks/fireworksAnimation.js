@@ -10,6 +10,7 @@ const Firework  = {
         range: 100,
         topAlpha: 0.75,
         colors: [ 0xff7575, 0xffb775, 0xfff175, 0xc3ff76, 0x7bffb8, 0x7de8ff, 0x799fff, 0xff93f7],
+        pauseBoolean: false,
         init: function (w,h) {
 
             Utils.setWidthAndHeight(w, h);
@@ -106,22 +107,28 @@ const Firework  = {
             cont.shape = beam;
             return cont;
         },
+        pause: function () {
+            this.pauseBoolean = !this.pauseBoolean
+        },
         ticker: function () {
-            for (let j = 0; j < this.fq; j++) {
-                let firework =  this.fs[j]
-                firework.cf ++;
-                for (let i = 0; i < firework.numberOfBeams; i++) {
-                    firework.beams[i].shape.y += firework.beams[i].speed;
-                    if (firework.cf >= firework.twinkleStart && firework.cf < firework.fadeOutStart) {
-                        firework.beams[i].alpha = Math.random() * this.topAlpha;
+            if (!this.pauseBoolean) {
+                for (let j = 0; j < this.fq; j++) {
+                    let firework =  this.fs[j]
+                    firework.cf ++;
+                    for (let i = 0; i < firework.numberOfBeams; i++) {
+                        firework.beams[i].shape.y += firework.beams[i].speed;
+                        if (firework.cf >= firework.twinkleStart && firework.cf < firework.fadeOutStart) {
+                            firework.beams[i].alpha = Math.random() * this.topAlpha;
+                        }
+                        firework.alpha = this.topAlpha;
+                        firework.beams[i].alpha *= 0.95;
                     }
-                    firework.alpha = this.topAlpha;
-                    firework.beams[i].alpha *= 0.95;
-                }
-                 if (firework.cf >= firework.end) {
-                    firework.restart();
+                    if (firework.cf >= firework.end) {
+                        firework.restart();
+                    }
                 }
             }
+          
         }
     }
 export default Firework;

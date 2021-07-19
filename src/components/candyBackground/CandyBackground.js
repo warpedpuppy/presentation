@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CandyAnimation from './candyAnimation';
 import Utils from '../utils/utils';
+import PauseButton from '../PauseButton';
 export default class PezBackground extends Component {
 
   componentDidMount = async () => {
@@ -21,6 +22,9 @@ export default class PezBackground extends Component {
   }
 
   render() {
-    return <div id="candy-canvas"></div>;
+    return <>
+    <div id="candy-canvas"></div>
+    <PauseButton buttonHandler={CandyAnimation} />
+    </>;
   }
 }

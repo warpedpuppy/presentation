@@ -21,10 +21,9 @@ const AssetCreation = {
     return new PIXI.Container()
   },
   Loader () {
-    console.log("does loader currently exist: ", !!this.loader)
 
     if (!!this.loader) {
-      console.log(this.loader)
+    //  console.log(this.loader)
     }
     this.loader = this.loader ? this.loader : new PIXI.Loader() ;
     return this.loader;

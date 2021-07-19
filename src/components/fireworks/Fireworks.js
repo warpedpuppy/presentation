@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import BreathingAnimation from '././breathingAnimation';
 import FireworksAnimation from './fireworksAnimation'
 import Utils from '../utils/utils'
+import PauseButton from '../PauseButton';
 export default class Fireworks extends Component {
 
 componentDidMount = () => {
@@ -20,7 +21,10 @@ resizeHandler = () => {
 }
   render() {
     return (
+      <>
       <div id="breathing"></div>
+      <PauseButton buttonHandler={FireworksAnimation} />
+      </>
     );
   }
 }

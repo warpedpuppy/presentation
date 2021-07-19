@@ -5,6 +5,7 @@ const PsychologyAnimation = {
     colors: [0x446996,0x2d4264,0x182033,0xb2826,0x1f3423,0xb482a,0x364a2b,0x262a16,0x3a4016,0x888136,0x635021,0x533217,0x5c2a1d],
     dots: [],
     totalItems: 1000,
+    pauseBoolean: false,
     init: function (w, h) {
         this.dots = [];
 
@@ -48,7 +49,9 @@ const PsychologyAnimation = {
         Tweens.tween(app.stage, 3, {alpha: [0,1]});
         app.ticker.add(this.ticker.bind(this));
     },
-   
+    pause: function () {
+        this.pauseBoolean = !this.pauseBoolean;
+    },
     resize: function (w, h) {
         Utils.setWidthAndHeight(w, h);
         this.app.renderer.resize(w, h)
@@ -59,15 +62,18 @@ const PsychologyAnimation = {
         this.app.destroy(true);
     },
     ticker: function (delta) {
-        Tweens.animate();
-        this.particleContainer.rotation += 0.004;
-        for (let i = 0; i < this.totalItems; ++i) {
-            if (i % 2 === 0) {
-                this.dots[i].x = Utils.cosWave(this.dots[i].storeX, this.dots[i].variance,  this.dots[i].variantSpeed)
-            } else {
-                this.dots[i].y = Utils.cosWave(this.dots[i].storeY, this.dots[i].variance,  this.dots[i].variantSpeed)
+        if (!this.pauseBoolean) {
+            Tweens.animate();
+            this.particleContainer.rotation += 0.004;
+            for (let i = 0; i < this.totalItems; ++i) {
+                if (i % 2 === 0) {
+                 this.dots[i].x = Utils.cosWave(this.dots[i].storeX, this.dots[i].variance,  this.dots[i].variantSpeed)
+                } else {
+                 this.dots[i].y = Utils.cosWave(this.dots[i].storeY, this.dots[i].variance,  this.dots[i].variantSpeed)
+                }
             }
         }
+     
     }
     
 }

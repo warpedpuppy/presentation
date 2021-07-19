@@ -11,6 +11,7 @@ const DangerLand = {
     ballQ: 20,
     counter: 0,
     ballInterval: 50,
+    pauseBoolean: false,
     init: function (w, h) {
 
 
@@ -63,11 +64,22 @@ const DangerLand = {
         window.addEventListener('keypress', this.jump.bind(this))
     },
     jump: function (e) {
+        if (this.pauseBoolean) return;
+        
         if (e.keyCode === 32 && !this.runner.isJumping) {
             this.runner.isJumping = true;
             this.runner.vy = 20;
         }
     },
+    pause: function () {
+        this.pauseBoolean = !this.pauseBoolean;
+
+        if (this.pauseBoolean === true) {
+            this.runner.stop();
+        } else {
+            this.runner.play();
+        }
+    },  
     resize: function (w, h) {
         Utils.setWidthAndHeight(w, h);
         this.runner.x = Utils.canvasWidth / 2;
@@ -77,31 +89,34 @@ const DangerLand = {
         this.app.destroy(true);
     },
     ticker: function (delta) {
-        Tweens.animate();
-        if (this.runner.isJumping) {
-            this.runner.vy -= this.gravity;
-            this.runner.y -= this.runner.vy;
-            if (this.runner.y >= this.runner.startY) {
-                this.runner.isJumping = false;
-                this.runner.y = this.runner.startY;
+        if (!this.pauseBoolean) {
+            Tweens.animate();
+            if (this.runner.isJumping) {
+                this.runner.vy -= this.gravity;
+                this.runner.y -= this.runner.vy;
+                if (this.runner.y >= this.runner.startY) {
+                    this.runner.isJumping = false;
+                    this.runner.y = this.runner.startY;
+                }
             }
-        }
-        this.counter ++;
-        if (this.counter % this.ballInterval === 0 && this.balls.length > 0) {
-            let b = this.balls.pop()
-            b.y = Utils.randomNumberBetween(400 - this.runner.height, 300);
-            b.x = Utils.canvasWidth;
-            this.app.stage.addChild(b)
-            this.ballsOnStage.push(b)
-        }
-        //don't do this in production
-        for (let i = 0; i < this.ballsOnStage.length; i++) {
-            let b = this.ballsOnStage[i];
-            b.x -= b.vx;
-            if (b.x < 0) {
+            this.counter ++;
+            if (this.counter % this.ballInterval === 0 && this.balls.length > 0) {
+                let b = this.balls.pop()
+                b.y = Utils.randomNumberBetween(400 - this.runner.height, 300);
                 b.x = Utils.canvasWidth;
+                this.app.stage.addChild(b)
+                this.ballsOnStage.push(b)
+            }
+            //don't do this in production
+            for (let i = 0; i < this.ballsOnStage.length; i++) {
+                let b = this.ballsOnStage[i];
+                b.x -= b.vx;
+                if (b.x < 0) {
+                    b.x = Utils.canvasWidth;
+                }
             }
         }
+       
    
     }
     

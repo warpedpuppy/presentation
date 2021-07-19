@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DangerLandAnimation from './dangerlandAnimation';
 import Utils from '../utils/utils';
 import './DangerLand.css';
+import PauseButton from '../PauseButton';
 export default class DangerLand extends Component {
 
 componentDidMount = () => {
@@ -22,6 +23,7 @@ resizeHandler = () => {
       <>
         <div id="danger-land"></div>
         <div>hit space to jump!</div>
+        <PauseButton buttonHandler={DangerLandAnimation} />
       </>
     );
   }

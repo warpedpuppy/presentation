@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PsychologyAnimation from './psychologyAnimation';
 import Utils from '../utils/utils';
+import PauseButton from '../PauseButton';
 export default class Frustration extends Component {
 
 componentDidMount = () => {
@@ -18,7 +19,10 @@ resizeHandler = () => {
 }
   render() {
     return (
+      <>
       <div id="psychology"></div>
+      <PauseButton buttonHandler={PsychologyAnimation} />
+      </>
     );
   }
 }
