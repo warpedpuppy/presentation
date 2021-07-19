@@ -8,8 +8,8 @@ export default function Section4() {
                 <h2>and <span id="wiggle-now">now</span> a warning?</h2>
                 <ul>
                     <li>be skeptical</li>
-                    <li>personal stories</li>
                     <li>scamming you, scamming others using you, hustlers</li>
+                    <li>please don't ever work for free.</li>
                 </ul>
             </div>
             <DangerLand />
