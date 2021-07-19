@@ -23,7 +23,7 @@ export default function Welcome() {
              
             </div>
             <div className="welcome-text">
-                    <blockquote>I am Ted, the salty Mainer.</blockquote>
+                    <blockquote>I am Ted.</blockquote>
                     <blockquote>Pleasure to meet you!</blockquote>
             </div>
         </div>
