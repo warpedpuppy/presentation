@@ -16,6 +16,7 @@ export default function Section5() {
                 <li>never do not include steps for replication when asking for help. . . </li>
                 <li>when working in a huge application. . . .</li>
                 <li>Keep your eye on mutations. . . . </li>
+                <li>Make sure you understand the shorthand you're using. . . . </li>
                 <li>Keep your eye on "this". . . . </li>
                 <li>Reverse engineering is fair game!</li>
                 <li>Honor your artists!</li>
