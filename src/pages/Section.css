@@ -2,6 +2,20 @@
     position: relative;
 }
 
+.extra-time-trigger {
+    cursor: pointer;
+}
+
+#extra-time {
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: transform 0.5s ease-in-out;
+}
+
+#extra-time.expanded {
+    transform: scaleY(100%);
+}
+
 .section-short-text {
     position: absolute;
     top: 200px;
