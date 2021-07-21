@@ -15,9 +15,20 @@ export default function Section5() {
                 <li>consider making a console log function that is dependent on a boolean. . . </li>
                 <li>never do not include steps for replication when asking for help. . . </li>
                 <li>when working in a huge application. . . .</li>
-                <li>Keep your eye on mutations. . . . </li>
-                <li>Make sure you understand the shorthand you're using. . . . </li>
-                <li>Keep your eye on "this". . . . </li>
+                <li>
+                    really common coding errors:
+                    <ul>
+                        <li>Keep your eye on mutations. . . . </li>
+                        <li>Keep your eye on "this". . . . </li>
+                    </ul>
+                </li>
+                <li>
+                    sometimes code can behave unexpectedly:
+                    <ul>
+                        <li>When is 'not a number' not 'not a number'?</li>
+                        <li>Make sure you understand the shorthand you're using. . . . </li>
+                    </ul>
+                </li>
                 <li>Reverse engineering is fair game!</li>
                 <li>Honor your artists!</li>
                 <li>When completely stuck. . . . </li>

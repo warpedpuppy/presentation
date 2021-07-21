@@ -110,22 +110,22 @@ export default function RainbowSwirls() {
       if (this.quadrant === 'TL') {
         return {
           x: this.utils.canvasWidth * 0.25,
-          y:  this.utils.canvasHeight * 0.25
+          y:  this.utils.canvasHeight * 0.15
         }
       } if (this.quadrant === 'TR') {
         return {
           x: this.utils.canvasWidth * 0.75,
-          y:  this.utils.canvasHeight * 0.25
+          y:  this.utils.canvasHeight * 0.15
         }
       } if (this.quadrant === 'BL') {
         return {
           x: this.utils.canvasWidth * 0.75,
-          y:  this.utils.canvasHeight * 0.75
+          y:  this.utils.canvasHeight * 0.35
         }
       } if (this.quadrant === 'BR') {
         return {
           x: this.utils.canvasWidth * 0.25,
-          y:  this.utils.canvasHeight * 0.75
+          y:  this.utils.canvasHeight * 0.35
         }
       }
     },
