@@ -3,6 +3,8 @@
 
 ### [visit this site](https://practical-murdock-216e06.netlify.app/).
 
+#### [presentation notes](https://github.com/warpedpuppy/presentation/blob/main/presentationNotes.pdf)
+
 ### links referenced in the talk
 
 1. [mozilla developer network](https://www.youtube.com/c/MozillaDeveloper).
